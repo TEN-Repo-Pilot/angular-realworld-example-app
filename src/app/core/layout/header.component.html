@@ -2,6 +2,15 @@
   <div class="container">
     <a class="navbar-brand" routerLink="/"><img src="assets/conduit-logo.svg" alt="Conduit" class="navbar-logo" /></a>
 
+    <button
+      type="button"
+      class="theme-toggle pull-xs-right"
+      [attr.aria-label]="isDark() ? 'Switch to light mode' : 'Switch to dark mode'"
+      (click)="toggleTheme()"
+    >
+      {{ isDark() ? '☀' : '☾' }}
+    </button>
+
     @if (authState$ | async; as authState) {
       <!-- Show this for logged out users -->
       @if (authState === 'unauthenticated') {
