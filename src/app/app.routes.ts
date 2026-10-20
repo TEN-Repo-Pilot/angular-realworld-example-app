@@ -17,6 +17,10 @@ export const routes: Routes = [
     loadComponent: () => import('./features/article/pages/home/home.component'),
   },
   {
+    path: 'welcome',
+    loadComponent: () => import('./features/landing/landing.component'),
+  },
+  {
     path: 'tag/:tag',
     loadComponent: () => import('./features/article/pages/home/home.component'),
   },
